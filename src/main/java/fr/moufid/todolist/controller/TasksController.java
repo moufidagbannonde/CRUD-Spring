@@ -43,6 +43,8 @@ public class TasksController {
         Tasks upelement = tasksRepository.findById(id).orElseThrow();
         // remplacer son/ses information(s) par la/les nouvelle(s) information(s)
         upelement.setContent(newTask.getContent());
+        // message d'erreur
+        System.out.println("Product updated successfully ! ");
         // sauvegarder la/les nouvelle(s) modification(s)
         return tasksRepository.save(upelement);
 
@@ -54,5 +56,6 @@ public class TasksController {
         Tasks supelement =tasksRepository.findById(id).orElseThrow();
         // suppression de l'élément de la BDD.
         tasksRepository.delete(supelement);
+        System.out.println(" Product deleted successfully ! ");
     }
 }
